@@ -1,5 +1,7 @@
 package com.t3.springbootbackend.entity;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 import org.hibernate.annotations.GenericGenerator;
 import jakarta.persistence.*;
@@ -33,5 +35,8 @@ public class User {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Review> myReviews = new HashSet<>();
 
 }
