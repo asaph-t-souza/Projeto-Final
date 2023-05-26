@@ -54,5 +54,31 @@ public class Location {
 
     @OneToMany(mappedBy = "location")
     private Set<Review> myReviews = new HashSet<>();
+
+    public Location(String name, String cep, String country, String state, String city, String district, String street,
+            String complement, int number, String locationType, float accessibilityStars, String description) {
+        this.name = name;
+        this.cep = cep;
+        this.country = country;
+        this.state = state;
+        this.city = city;
+        this.district = district;
+        this.street = street;
+        this.complement = complement;
+        this.number = number;
+        this.locationType = locationType;
+        this.accessibilityStars = accessibilityStars;
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Location [id=" + id + ", name=" + name + ", cep=" + cep + ", country=" + country + ", state=" + state
+                + ", city=" + city + ", district=" + district + ", street=" + street + ", complement=" + complement
+                + ", number=" + number + ", locationType=" + locationType + ", accessibilityStars=" + accessibilityStars
+                + ", description=" + description + "]";
+    }
+
+    
     
 }

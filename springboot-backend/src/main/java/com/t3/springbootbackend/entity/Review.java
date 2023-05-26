@@ -37,5 +37,12 @@ public class Review {
     @JoinColumn(name = "location_id")
     private Location location;
 
+    @Override
+    public String toString() {
+        return "Review [id=" + id + ", reviewScore=" + reviewScore + ", comment=" + comment + ", publicationDate="
+                + publicationDate + ", \n \n user=" + user + ", \n \n location=" + location + "]";
+    }
+
+    
     
 }
